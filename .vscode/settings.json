@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/user/repos/cpp_practice",
+            "binaryPath": "/home/user/repos/cpp_practice/practice",
+            "binaryArgs": []
+        }
+    ]
+}
