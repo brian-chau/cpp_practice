@@ -9,8 +9,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class MTNode;          // forward declaration
 class LinkedListNode;  // forward declaration
 
