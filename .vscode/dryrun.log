@@ -1,4 +1,4 @@
-make clean --dry-run --keep-going --print-directory
+make clean --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/user/repos/cpp_practice'
 rm -rf sources/*.o *~
 rm -rf practice.dSYM

@@ -22,7 +22,7 @@ LFLAGS := -L./libs
 # TODO: If you want to create a normal binary file, remove this '-shared' flag
 LDFLAGS := #-shared
 
-LIBS := -lgmp -lgmpxx
+LIBS := -lncurses
 
 # define the C++ source files
 SRCS := $(wildcard sources/*.cpp)
