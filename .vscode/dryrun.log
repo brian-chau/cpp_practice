@@ -1,11 +1,11 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/user/repos/cpp_wsl_ncurses'
-g++-11 -Wall -Werror -g -std=c++20   -I./headers  -I./sources -c sources/Menu.cpp  -o sources/Menu.o
-g++-11 -Wall -Werror -g -std=c++20   -I./headers  -I./sources -c sources/main.cpp  -o sources/main.o
+g++ -Wall -Werror -g -std=c++17   -I./headers  -I./sources -c sources/Menu.cpp  -o sources/Menu.o
+g++ -Wall -Werror -g -std=c++17   -I./headers  -I./sources -c sources/main.cpp  -o sources/main.o
 # TODO: If you want to create a normal binary file, use this
-g++-11 -Wall -Werror -g -std=c++20   -I./headers  -I./sources -o practice sources/Menu.o sources/main.o -L./libs -lncurses
+g++ -Wall -Werror -g -std=c++17   -I./headers  -I./sources -o practice sources/Menu.o sources/main.o -L./libs -lncurses
 # TODO: If you want to create a shared library, use this
-# g++-11 -Wall -Werror -g -std=c++20   -lncurses -o practice sources/Menu.o sources/main.o
+# g++ -Wall -Werror -g -std=c++17   -lncurses -o practice sources/Menu.o sources/main.o
 echo  'practice' has been compiled
 make: Leaving directory '/home/user/repos/cpp_wsl_ncurses'
  
