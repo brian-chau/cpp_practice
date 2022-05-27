@@ -130,3 +130,7 @@ This is an example of how to use:
         2. Press Enter to save the keybinding.
     3. In the keybindings search box, type "Makefile: Build clean the current target"
         1. Double-click the keybinding and replace it with Ctrl+Shift+Z.
+10. Change "Format on Save".
+    1. Click the gear icon in the lower left corner > Settings.
+    2. In the search box, type `C_Cpp.clang_format_fallbackStyle`
+    3. In the field that appears, change `Visual Studio` to `{ BasedOnStyle: Google, IndentWidth: 4 }`
