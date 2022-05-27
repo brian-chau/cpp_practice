@@ -103,7 +103,7 @@ This is an example of how to use:
     5. Run: `sudo ldconfig`
 
 ## Setting up VSCode
-1. In WSL, type `code .`
+1. Right-click on the project folder, select `Open in Terminal` to open the application in WSL2, then type `code .`
 2. Press Ctrl+Shift+X to open the "Extensions" window.
 3. Install the following extensions
     1. C/C++ Themes
