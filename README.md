@@ -21,7 +21,7 @@ This is an example of how to use:
 3. Fix the command line path name.
     1. Edit the ~/.bashrc file.
         * At the top of the file, paste the following code snippet, where <current_directory> is the name of the 
-          mount point shown in the console window (e.g. "/mnt/c/Users/<username>")
+          mount point shown in the console window (e.g. "/mnt/c/Users/`username`")
             ```
             if [[ $PWD == /mnt/c/Users/<username> ]]; then
               cd /home/user/user
