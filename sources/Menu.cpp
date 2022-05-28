@@ -5,9 +5,16 @@
 #define WIDTH 30
 #define HEIGHT 10
 Menu::Menu(std::vector<std::string> choices)
-    : m_Choices(choices), m_nChoices(choices.size()), m_MenuWin(NULL), m_Highlight(1) {}
+    : m_Choices(choices)
+    , m_nChoices(choices.size())
+    , m_MenuWin(NULL)
+    , m_Highlight(1) {
+    // Intentionally left blank
+}
 
-Menu::~Menu() {}
+Menu::~Menu() {
+    // Intentionally left blank
+}
 
 std::string Menu::HandleMenu() {
     int choice(0);

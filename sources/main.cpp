@@ -4,11 +4,8 @@
 #include "Menu.h"
 
 int main() {
-    std::vector<std::string> choices{"Choice 1",
-                                     "Choice 2",
-                                     "Choice 3",
-                                     "Choice 4",
-                                     "Exit"};
+    std::vector<std::string> choices{"Choice 1", "Choice 2", "Choice 3",
+                                     "Choice 4", "Exit"};
 
     std::unique_ptr<Menu> menu(new Menu(choices));
     std::string result = menu->HandleMenu();

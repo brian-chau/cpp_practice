@@ -114,6 +114,7 @@ This is an example of how to use:
     3. Makefile Tools
     4. Remote - WSL
     5. Better C++ Syntax
+    6. Clang Format by xaver
 4. Close VSCode
 5. Type `code .` in the terminal to restart it.
 6. Press Ctrl+Shift+X again to open the "Extensions" window.
