@@ -9,7 +9,9 @@ CC := g++
 RM := rm -rf
 
 # define any compile-time flags
-CFLAGS := -Wall -Werror -g -std=c++17 #-fPIC # Uncomment -fPIC for a shared object
+# Uncomment -g for debugging information
+# Uncomment -fPIC for shared library
+CFLAGS := -Wall -Werror -O3 -std=c++17 #-g #-fPIC
 
 # define any directories containing header files other than /usr/include
 #
@@ -19,7 +21,7 @@ INCLUDES := $(foreach d, $(INC), -I$d)
 LFLAGS := -L./libs
 
 # This should generate a shared object
-# TODO: If you want to create a normal binary file, remove this '-shared' flag
+# Uncomment -shared for shared libraries
 LDFLAGS := #-shared
 
 LIBS := -lncurses
@@ -30,7 +32,7 @@ SRCS := $(wildcard sources/*.cpp)
 OBJS := $(SRCS:.cpp=.o)
 
 # define the executable file
-MAIN := practice
+MAIN := menu
 
 .PHONY: depend clean clean_all
 

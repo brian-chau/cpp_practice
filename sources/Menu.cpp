@@ -24,8 +24,8 @@ std::string Menu::HandleMenu() {
     clear();
     noecho();
     cbreak(); /* Line buffering disabled. pass on everything */
-    unsigned int startx = (80 - WIDTH) / 2;
-    unsigned int starty = (24 - HEIGHT) / 2;
+    unsigned int startx = 5;
+    unsigned int starty = 1;
 
     m_MenuWin = newwin(HEIGHT, WIDTH, starty, startx);
     keypad(m_MenuWin, TRUE);
