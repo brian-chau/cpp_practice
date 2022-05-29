@@ -15,7 +15,7 @@ CFLAGS := -Wall -Werror -O3 -std=c++17 #-g #-fPIC
 
 # define any directories containing header files other than /usr/include
 #
-INC := ./headers ./sources
+INC := ./headers ./sources ${sort ${dir ${wildcard ./headers/*/ ./sources/*/}}}
 INCLUDES := $(foreach d, $(INC), -I$d)
 
 LFLAGS := -L./libs
@@ -27,7 +27,7 @@ LDFLAGS := #-shared
 LIBS := -lncurses
 
 # define the C++ source files
-SRCS := $(wildcard sources/*.cpp)
+SRCS := $(wildcard ./sources/*.cpp ./sources/*/*.cpp)
 
 OBJS := $(SRCS:.cpp=.o)
 
