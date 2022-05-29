@@ -17,3 +17,4 @@ BraceWrapping:
   BeforeElse:      false
   IndentBraces:    false
   SplitEmptyFunction: true
+AllowShortFunctionsOnASingleLine: Empty
