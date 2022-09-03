@@ -175,8 +175,12 @@ This is an example of how to use:
     4. In the search bar, type "Trim Trailing Whitespace" and check the box for "Files: Trim Trailing Whitespace"
     5. In the search bar, type "Detect Indentation" and uncheck the box for "Editor: Detect Indentation"
     6. In the search bar, type "Format On Save" and check the box for "Editor: Format On Save"
-    7. In the search box, type `C_Cpp.clang_format_fallbackStyle`
+    7. In the search bar, type `C_Cpp.clang_format_fallbackStyle`
         1. In the field that appears, change `Visual Studio` to `{ BasedOnStyle: Google, IndentWidth: 4 }`
+    8. In the search bar, type "Clang-format: Executable".
+        1. In the WSL terminal, type `which clang-format`
+        2. Copy that path and paste it into the field.
+    9. In the search bar, type "Default Formatter" and select from the dropdown menu `C/C++`.
 11. Set the key bindings to build and clean the solution.
     1. Press Ctrl+K Ctrl+S
     2. In the keybindings search box, type "makefile: build clean the target ALL"
