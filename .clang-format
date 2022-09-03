@@ -4,6 +4,7 @@ TabWidth: 4
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 BreakConstructorInitializers: BeforeComma
 BreakBeforeBraces: Custom
+AccessModifierOffset: -4
 BraceWrapping:
   AfterClass:      false
   AfterControlStatement: false

@@ -4,13 +4,13 @@
 #include <vector>
 
 class Menu {
-   public:
+public:
     Menu(std::vector<std::string> choices);
     ~Menu();
     std::string HandleMenu();
     void PrintMenu();
 
-   private:
+private:
     std::vector<std::string> m_Choices;
     unsigned int m_nChoices;
     WINDOW *m_MenuWin;
