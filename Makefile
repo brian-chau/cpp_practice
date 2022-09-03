@@ -1,62 +1,49 @@
-# 'make depend'      uses makedepend to automatically generate dependencies
-#                    (dependencies are added to end of Makefile)
-# 'make'             build executable file 'mycc'
-# 'make clean'       removes all .o files
-# 'make clean all'   removes all .o files and executable file
+# 'make'        build executable file 'exe'
+# 'make clean'  removes all .o and executable files
+#
 
-# define the C++ compiler to use
-CC := g++
-RM := rm -rf
+USE_C = 0
 
-# define any compile-time flags
-# Uncomment -g for debugging information
-# Uncomment -fPIC for shared library
-CFLAGS := -Wall -Werror -O3 -std=c++17 #-g #-fPIC
+ifeq ($(USE_C), 1)
+CC = gcc-12
+SRCS = $(wildcard ./sources/*.c)
+OBJS = $(SRCS:.c=.o)
+CFLAGS = -Wall -Werror -O3 -fPIC -g
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+else
+CC = g++-12
+SRCS = $(wildcard ./sources/*.cpp)
+OBJS = $(SRCS:.cpp=.o)
+CFLAGS = -Wall -Werror -O3 -fPIC -std=c++20 -g
+.cpp.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+endif
 
 # define any directories containing header files other than /usr/include
 #
-INC := ./headers ./sources ${sort ${dir ${wildcard ./headers/*/ ./sources/*/}}}
-INCLUDES := $(foreach d, $(INC), -I$d)
+INCLUDES = -I./headers
 
-LFLAGS := -L./libs
+# define library paths in addition to /usr/lib
+#   if I wanted to include libraries not in /usr/lib I'd specify
+#   their path using -Lpath, something like:
+LFLAGS = -L./libs
 
-# This should generate a shared object
-# Uncomment -shared for shared libraries
-LDFLAGS := #-shared
-
-LIBS := -lncurses
-
-# define the C++ source files
-SRCS := $(wildcard ./sources/*.cpp ./sources/*/*.cpp)
-
-OBJS := $(SRCS:.cpp=.o)
+# define any libraries to link into executable:
+#   if I want to link in libraries (libx.so or libx.a) I use the -llibname
+#   option, something like (this will link in libmylib.so and libm.so:
+LIBS = -lncurses
 
 # define the executable file
-MAIN := menu
+MAIN = exe
 
-.PHONY: depend clean clean_all
+.PHONY: all clean
 
 all:    $(MAIN)
-	@echo  '$(MAIN)' has been compiled
+	@echo $(MAIN) has been compiled
 
 $(MAIN): $(OBJS)
-	# TODO: If you want to create a normal binary file, use this
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
-	# TODO: If you want to create a shared library, use this
-	# $(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@ $^
-
-.cpp.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) sources/*.o *~
-	$(RM) $(MAIN).dSYM
-
-clean_all:
-	$(RM) sources/*.o *~ $(MAIN)
-	$(RM) $(MAIN).dSYM
-
-depend: $(SRCS)
-	makedepend $(INCLUDES) $^
-
-# DO NOT DELETE THIS LINE -- make depend needs it
+	$(RM) ./sources/*.o *~ $(MAIN)
