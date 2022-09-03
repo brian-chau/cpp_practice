@@ -196,7 +196,7 @@ This is an example of how to use:
     2. Run these commands:
         ```
         cd repos
-        git clone git@github.com:brian-chau/cpp_large_numbers.git
+        git clone git@github.com:brian-chau/cpp_wsl_ncurses.git
         ```
 2. Setup the project
     1. Navigate to the project with `cd cpp_wsl_ncurses`
