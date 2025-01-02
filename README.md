@@ -161,8 +161,8 @@ This is an example of how to use:
     3. Run `sudo apt install g++-12 gcc-12 build-essential`
 
 8. Install `cmake` from source.
-    1. Download `cmake-3.25.0.tar.gz` from this link: https://cmake.org/download/
-    2. Unzip it with the command `tar -xzf cmake-3.25.0.tar.gz`.
+    1. Download `cmake-x.y.z.tar.gz` from this link: https://cmake.org/download/
+    2. Unzip it with the command `tar -xzf cmake-x.y.z.tar.gz`.
     3. Run the following commands:
         ```
         sudo ./configure
